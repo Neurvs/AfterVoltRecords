@@ -1,0 +1,23 @@
+{
+  "tagline": "Independent record label / Underground electronic music",
+  "intro": "AfterVolt Records. A space for underground electronic sounds, artists and new releases.",
+  "about": "AfterVolt Records is an independent record label for underground electronic music.",
+  "contactText": "For bookings, demos and general enquiries, contact AfterVolt Records.",
+  "contactEmail": "",
+  "socialUrl": "",
+  "releases": [
+    {
+      "title": "TEST 1",
+      "artist": "Test 1",
+      "catalog": "505",
+      "url": "https://youtu.be/DLzxrzFCyOs?si=PFqnGrJfnLMENEHp",
+      "cover": "https://youtu.be/7T1llQSMj-o?si=XA5gDj574pkeC5G3"
+    }
+  ],
+  "artists": [
+    {
+      "name": "TEST",
+      "url": "https://youtu.be/7T1llQSMj-o?si=XA5gDj574pkeC5G3"
+    }
+  ]
+}
