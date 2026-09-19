@@ -1,73 +1,22 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0712">
-  <meta name="description" content="AfterVolt Records — independent underground electronic music.">
-  <title>AfterVolt Records — Underground Electronic Music</title>
-  <style>
-    :root{color-scheme:dark;--bg:#0b0712;--surface:#171020;--ink:#f8f2ff;--muted:#bbaecb;--accent:#bc7cff;--line:#514060}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
-    a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
-    .wrap{width:min(1160px,calc(100% - 44px));margin:auto}.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
-    header{position:sticky;top:0;z-index:10;background:#0b0712e8;border-bottom:1px solid #ffffff22;backdrop-filter:blur(12px)}
-    header .wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{font-size:1.1rem;letter-spacing:.18em;text-decoration:none;font-weight:900;white-space:nowrap}.brand span{color:var(--accent)}
-    nav{display:flex;gap:28px}nav a{text-decoration:none;color:#e6ddec;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}nav a:hover{color:var(--accent)}
-    .menu{display:none;background:none;border:1px solid var(--line);border-radius:5px;padding:9px 13px;color:var(--ink);font:inherit}
-    .hero{min-height:660px;display:flex;align-items:center;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 78% 30%,#70318b8c 0,transparent 40%),radial-gradient(ellipse at 10% 100%,#342053 0,transparent 55%),#0b0712}
-    .hero:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.16;background:repeating-linear-gradient(100deg,transparent 0 13px,#9d67ff 14px,transparent 15px 46px);transform:skewY(-10deg) scale(1.5)}
-    .hero .wrap{padding:92px 0 108px}.hero h1{font-size:clamp(4rem,11vw,10rem);letter-spacing:-.07em;line-height:.9;margin:18px 0 26px;font-weight:900;max-width:1050px}.hero h1 em{display:block;font-style:normal;color:var(--accent)}
-    .hero p{font-size:clamp(1rem,2vw,1.3rem);max-width:570px;color:#e5d7ef}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .button{display:inline-block;text-decoration:none;padding:15px 23px;border:1px solid var(--accent);text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;font-weight:900}.primary{background:var(--accent);color:#100719}.button:hover{background:#d4a8ff;color:#100719}.secondary:hover{background:#281237;color:var(--ink)}
-    section{padding:100px 0}section h2{font-size:clamp(2.3rem,6vw,5rem);letter-spacing:-.055em;line-height:1.05;margin:12px 0 40px;text-transform:uppercase}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:15px}
-    .releases{background:#100b18}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.release{background:var(--surface);border:1px solid #ffffff16;text-decoration:none;display:block;overflow:hidden;transition:transform .2s,border-color .2s}.release:hover{transform:translateY(-5px);border-color:var(--accent)}
-    .cover{aspect-ratio:1;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#261237,#6a2692 58%,#100819)}
-    .cover:before{content:"";width:65%;aspect-ratio:1;border:1px solid #ffffff66;border-radius:50%;box-shadow:0 0 0 30px #ffffff0a,0 0 0 60px #ffffff08;transform:rotate(-25deg)}
-    .cover:after{content:"AV";position:absolute;font-weight:900;font-size:clamp(2.5rem,7vw,6rem);letter-spacing:-.1em;color:#ffffffc4}.cover.two{background:linear-gradient(45deg,#100918,#522481,#301643)}.cover.three{background:linear-gradient(145deg,#210e39,#9845b6,#0c0713)}
-    .details{padding:20px}.details small{color:var(--accent);font-size:.68rem;letter-spacing:.17em;font-weight:900}.details h3{margin:7px 0 3px;font-size:1.25rem}.details p{margin:0;color:var(--muted);font-size:.93rem}
-    .note{color:var(--muted);font-size:.85rem;margin-top:20px}.artists{background:linear-gradient(135deg,#130b1f,#241035 60%,#0b0712)}.artistgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.artist{min-height:160px;display:flex;align-items:end;padding:22px;border:1px solid #a66cce55;background:linear-gradient(130deg,#21132f,#4d2067);font-size:clamp(1.2rem,3vw,2rem);font-weight:900;letter-spacing:-.03em}
-    .about p{font-size:clamp(1.2rem,2.6vw,1.75rem);max-width:750px;color:#d7c8e5}.contact{background:radial-gradient(ellipse at 80% 100%,#50216d,transparent 48%),#150b21}.contact p{color:var(--muted);max-width:650px}
-    footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.82rem}footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    @media(max-width:720px){header .wrap{min-height:66px}.brand{font-size:.91rem}.menu{display:block}nav{display:none;position:absolute;top:66px;left:0;right:0;background:#11091a;border-bottom:1px solid var(--line);padding:22px;flex-direction:column}nav.open{display:flex}.hero{min-height:565px}.hero .wrap{padding:65px 0}.hero h1{font-size:clamp(3.8rem,15vw,6.8rem)}section{padding:70px 0}.cards,.artistgrid{grid-template-columns:1fr}.sectionhead{display:block}.cover:after{font-size:7rem}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-  </style>
-</head>
-<body>
-  <header><div class="wrap">
-    <a class="brand" href="#top" aria-label="AfterVolt Records home">AFTERVOLT<span> / </span>RECORDS</a>
-    <button class="menu" id="menuButton" aria-controls="mainNav" aria-expanded="false">MENU ☰</button>
-    <nav id="mainNav" aria-label="Main navigation"><a href="#releases">Releases</a><a href="#artists">Artists</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-  </div></header>
-  <main id="top">
-    <div class="hero"><div class="wrap">
-      <div class="eyebrow">Independent record label / Underground electronic music</div>
-      <h1>FEEL THE<br><em>VOLTAGE.</em></h1>
-      <p>AfterVolt Records. A space for underground electronic sounds, artists and new releases.</p>
-      <div class="actions"><a class="button primary" href="#releases">Explore releases ↗</a><a class="button secondary" href="#contact">Get in touch ↗</a></div>
-    </div></div>
-    <section class="releases" id="releases"><div class="wrap">
-      <div class="sectionhead"><div><div class="eyebrow">The sound</div><h2>Out now.</h2></div><p class="note">Replace these example cards with actual releases and cover art.</p></div>
-      <div class="cards">
-        <article class="release"><div class="cover" role="img" aria-label="Placeholder artwork for release one"></div><div class="details"><small>RELEASE 001 / PLACEHOLDER</small><h3>Release title</h3><p>Artist name · Add music link</p></div></article>
-        <article class="release"><div class="cover two" role="img" aria-label="Placeholder artwork for release two"></div><div class="details"><small>RELEASE 002 / PLACEHOLDER</small><h3>Release title</h3><p>Artist name · Add music link</p></div></article>
-        <article class="release"><div class="cover three" role="img" aria-label="Placeholder artwork for release three"></div><div class="details"><small>RELEASE 003 / PLACEHOLDER</small><h3>Release title</h3><p>Artist name · Add music link</p></div></article>
-      </div>
-    </div></section>
-    <section class="artists" id="artists"><div class="wrap"><div class="eyebrow">Meet the roster</div><h2>Artists.</h2>
-      <div class="artistgrid"><div class="artist">Artist 01</div><div class="artist">Artist 02</div><div class="artist">Artist 03</div></div>
-      <p class="note">Artist names and profiles are placeholders until you provide the real roster.</p>
-    </div></section>
-    <section class="about" id="about"><div class="wrap"><div class="eyebrow">The label</div><h2>About AfterVolt.</h2><p>AfterVolt Records is an independent record label for underground electronic music.</p><p class="note">Add the label's real story, location, and musical direction here.</p></div></section>
-    <section class="contact" id="contact"><div class="wrap"><div class="eyebrow">Connect</div><h2>Get in touch.</h2><p>For bookings, demos and general enquiries, add the correct contact address and social links before publishing.</p><div class="actions"><a class="button primary" href="https://aftervoltrecords.com" target="_blank" rel="noopener noreferrer">Current AfterVolt page ↗</a></div><p class="note">This button points to the existing domain until real booking details are supplied.</p></div></section>
-  </main>
-  <footer><div class="wrap"><span>© <span id="year">2026</span> AfterVolt Records</span><span>Independent underground electronic music.</span></div></footer>
-  <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const btn=document.getElementById('menuButton');const nav=document.getElementById('mainNav');
-    btn.addEventListener('click',()=>{const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));});
-    nav.addEventListener('click',event=>{if(event.target.closest('a')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
-  </script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0712"><meta name="description" content="AfterVolt Records — independent underground electronic music."><title>AfterVolt Records — Underground Electronic Music</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0712;--panel:#171020;--accent:#bc7cff;--muted:#c2b1d1;--ink:#f8f2ff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,Helvetica,sans-serif}a{color:inherit}a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.wrap{max-width:1160px;width:calc(100% - 44px);margin:auto}header{position:sticky;top:0;z-index:5;background:#0b0712f0;border-bottom:1px solid #ffffff22}header .wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}header a{text-decoration:none;font-size:.85rem;font-weight:800;letter-spacing:.1em}header strong{letter-spacing:.16em}header strong span{color:var(--accent)}nav{display:flex;gap:22px;flex-wrap:wrap}.eyebrow{color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}.hero{min-height:610px;display:flex;align-items:center;background:radial-gradient(ellipse at 77% 32%,#70318b93,transparent 43%),radial-gradient(ellipse at 5% 95%,#342053,transparent 55%),#0b0712}.hero .wrap{padding:85px 0}.hero h1{font-size:clamp(3.8rem,11vw,9rem);letter-spacing:-.07em;line-height:.91;margin:22px 0}.hero h1 em{font-style:normal;color:var(--accent)}.hero p{max-width:590px;color:#e5d7ef;font-size:1.17rem}.actions{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px}.button{display:inline-block;border:1px solid var(--accent);padding:13px 22px;text-decoration:none;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.77rem}.button.primary{background:var(--accent);color:#120719}.button:hover{background:#d2a5ff;color:#120719}section{padding:90px 0}section h2{font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;letter-spacing:-.05em;margin:12px 0 35px;text-transform:uppercase}.releases{background:#100b18}.cards,.artistgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.release{background:var(--panel);border:1px solid #ffffff20;text-decoration:none;display:block;overflow:hidden}.release:hover{border-color:var(--accent)}.cover{aspect-ratio:1;display:grid;place-items:center;background:linear-gradient(135deg,#261237,#6a2692 58%,#100819);font-weight:900;font-size:4rem;color:#ffffffbb;overflow:hidden}.cover img{width:100%;height:100%;object-fit:cover}.details{padding:20px}.details small{color:var(--accent);font-size:.7rem;letter-spacing:.15em}.details h3{margin:5px 0;font-size:1.35rem}.details p,.note{color:var(--muted)}.artists{background:linear-gradient(135deg,#130b1f,#241035 60%,#0b0712)}.artist{display:flex;flex-direction:column;justify-content:end;min-height:150px;background:linear-gradient(130deg,#21132f,#4d2067);border:1px solid #a66cce55;padding:22px;font-size:1.5rem;font-weight:800;text-decoration:none}.artist small{font-size:.7rem;color:#dbb7ff}.about p{font-size:clamp(1.1rem,2.4vw,1.6rem);max-width:780px;color:#d7c8e5;white-space:pre-wrap}.contact{background:radial-gradient(ellipse at 80% 100%,#50216d,transparent 48%),#150b21}.contact p{color:var(--muted);white-space:pre-wrap}footer{padding:32px 0;border-top:1px solid #554168;color:var(--muted);font-size:.85rem}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}@media(max-width:700px){header .wrap{min-height:65px;display:block;padding:12px 0}nav{gap:12px;margin-top:6px}section{padding:65px 0}.cards,.artistgrid{grid-template-columns:1fr}.hero{min-height:500px}}
+</style></head><body><header><div class="wrap"><a href="#top"><strong>AFTERVOLT<span> / </span>RECORDS</strong></a><nav aria-label="Main navigation"><a href="#releases">Releases</a><a href="#artists">Artists</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div></header>
+<main id="top"><div class="hero"><div class="wrap"><div class="eyebrow" id="tagline">Independent record label / Underground electronic music</div><h1>FEEL THE<br><em>VOLTAGE.</em></h1><p id="intro">AfterVolt Records. A space for underground electronic sounds, artists and new releases.</p><div class="actions"><a class="button primary" href="#releases">Explore releases ↗</a><a class="button" href="#contact">Get in touch ↗</a></div></div></div>
+<section class="releases" id="releases"><div class="wrap"><div class="eyebrow">The sound</div><h2>Out now.</h2><div class="cards" id="releaseCards"><p class="note">Releases coming soon.</p></div></div></section>
+<section class="artists" id="artists"><div class="wrap"><div class="eyebrow">Meet the roster</div><h2>Artists.</h2><div class="artistgrid" id="artistCards"><p class="note">Artists coming soon.</p></div></div></section>
+<section class="about" id="about"><div class="wrap"><div class="eyebrow">The label</div><h2>About AfterVolt.</h2><p id="aboutText">AfterVolt Records is an independent record label for underground electronic music.</p></div></section>
+<section class="contact" id="contact"><div class="wrap"><div class="eyebrow">Connect</div><h2>Get in touch.</h2><p id="contactText">For bookings, demos and general enquiries, contact AfterVolt Records.</p><div class="actions" id="contactActions"></div></div></section></main>
+<footer><div class="wrap"><span>© <span id="year">2026</span> AfterVolt Records</span><span>Independent underground electronic music.</span></div></footer>
+<script>
+'use strict';document.getElementById('year').textContent=new Date().getFullYear();
+const $=id=>document.getElementById(id);const node=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el};
+const safeUrl=v=>typeof v==='string'&&/^https:\/\/[^\s<>"']+$/i.test(v)?v:null;
+function draw(data){for(const [id,key] of [['tagline','tagline'],['intro','intro'],['aboutText','about'],['contactText','contactText']])if(typeof data[key]==='string')$(id).textContent=data[key];
+const releases=$('releaseCards');releases.replaceChildren();if(!data.releases?.length)releases.append(node('p','note','Releases coming soon.'));
+for(const r of data.releases||[]){const url=safeUrl(r.url);const card=node(url?'a':'article','release');if(url){card.href=url;card.target='_blank';card.rel='noopener noreferrer'}const art=node('div','cover');const cover=safeUrl(r.cover)||(typeof r.cover==='string'&&/^assets\/[a-zA-Z0-9_./-]+$/.test(r.cover)&&!r.cover.includes('..')?r.cover:null);if(cover){const img=node('img');img.src=cover;img.alt='Cover art: '+(r.title||'Release');img.loading='lazy';art.append(img)}else art.textContent='AV';const details=node('div','details');details.append(node('small','',r.catalog||'AFTERVOLT RELEASE'),node('h3','',r.title||'Untitled release'),node('p','',r.artist||''));card.append(art,details);releases.append(card)}
+const artists=$('artistCards');artists.replaceChildren();if(!data.artists?.length)artists.append(node('p','note','Artists coming soon.'));for(const a of data.artists||[]){const url=safeUrl(a.url);const card=node(url?'a':'div','artist',a.name||'Artist');if(url){card.href=url;card.target='_blank';card.rel='noopener noreferrer'}artists.append(card)}
+const actions=$('contactActions');actions.replaceChildren();if(typeof data.contactEmail==='string'&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.contactEmail)){const mail=node('a','button primary','Email / Bookings ↗');mail.href='mailto:'+data.contactEmail;actions.append(mail)}const social=safeUrl(data.socialUrl);if(social){const link=node('a','button','Listen / Follow ↗');link.href=social;link.target='_blank';link.rel='noopener noreferrer';actions.append(link)}}
+fetch('content.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Content unavailable');return r.json()}).then(draw).catch(()=>{$('releaseCards').replaceChildren(node('p','note','Content is temporarily unavailable.'));$('artistCards').replaceChildren(node('p','note','Please check back soon.'))});
+</script></body></html>
