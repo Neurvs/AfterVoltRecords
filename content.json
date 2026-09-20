@@ -5,6 +5,19 @@
   "contactText": "For bookings, demos and general enquiries, contact AfterVolt Records.",
   "contactEmail": "aftervolt@outlook.com",
   "socialUrl": "https://youtu.be/k-7UKeENLzc?si=YEJZ8XIJ4VHY3rhU",
-  "releases": [],
-  "artists": []
+  "releases": [
+    {
+      "title": "One Inch Closer",
+      "artist": "Neurvs",
+      "catalog": "",
+      "url": "https://open.spotify.com/intl-es/track/1TDV06YRmpJLuzBLmqMFHq?si=7d0d87ba6cc74a61",
+      "cover": ""
+    }
+  ],
+  "artists": [
+    {
+      "name": "Neurvs",
+      "url": "https://open.spotify.com/intl-es/artist/21Tf9ONBSNVtrTXe5VfbDN?si=cpMcST8oTIuMfUZULcbTSw"
+    }
+  ]
 }
